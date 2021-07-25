@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference webapp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        nav {
+            display: flex;
+            flex-direction: row;
+            width: 100vw;
+            height: 40px;
+            background-color: black;
+            align-items: center;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            margin-bottom: 20px;
+        }
+        
+        nav span {
+            width: max-content;
+            font-size: 25px;
+            margin-right: 5px;
+            padding: 0px 5px;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .ref {
+            width: 100vw;
+            height: max-content;
+        }
+        
+        #heading {
+            font-size: 40px;
+            overflow-x: hidden;
+            color: white;
+            margin-top: 50px;
+            text-align: center;
+            text-transform: uppercase;
+            background-color: rgb(66, 100, 89);
+        }
+        
+        .inp {
+            width: 90vw;
+            height: 35px;
+            margin: 20px auto;
+            border: 1.5px solid black;
+            padding: 0;
+            display: flex;
+        }
+        
+        .inp image {
+            width: 5%;
+        }
+        
+        .inp input {
+            width: 95%;
+            height: 30px;
+            margin: 0;
+            padding-top: 4px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+        }
+        
+        table {
+            width: 90vw;
+            margin: auto;
+        }
+        
+        table tr {
+            height: 30px;
+            font-size: 17px;
+        }
+        
+        td {
+            border-bottom: 1px dashed black;
+            padding: 2.5px 0px 2.5px 5px;
+        }
+        
+        td:first-child {
+            width: 13vw;
+            text-align: left;
+        }
+        
+        td:nth-child(2) {
+            width: 75vw;
+        }
+        
+        thead td {
+            border: none;
+        }
+        
+        thead tr {
+            background-color: aqua;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+        #html-ref {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <span id="css" onclick="view(event)">CSS</span>
+        <span id="html" onclick="view(event)">HTML</span>
+    </nav>
+
+    <h1 id="heading">css</h1>
+    <div class="inp">
+        <img src="search.svg" alt="search">
+        <input type="text" id="property-name" placeholder="Enter Property Name" onkeyup="search()">
+    </div>
+    <div class="ref" id="html-ref">
+        <table id="html-table" cellspacing="0">
+            <thead>
+                <tr>
+                    <td>Tag</td>
+                    <td>Description</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&lt;!--...--&gt;</td>
+                    <td>Defines a comment</td>
+                </tr>
+                <tr>
+                    <td>&lt;!DOCTYPE&gt;</td>
+                    <td>Defines the socument type</td>
+                </tr>
+                <tr>
+                    <td>&lt;abbr&gt;</td>
+                    <td>Defines an abbreviation or an acronym</td>
+                </tr>
+                <tr>
+                    <td>&lt;address&gt;</td>
+                    <td>Defines contact information for the auhor/owner of a document</td>
+                </tr>
+                <tr>
+                    <td>&lt;artical&gt;</td>
+                    <td>Defines an articals</td>
+                </tr>
+                <tr>
+                    <td>&lt;a&gt;</td>
+                    <td>Defines a link</td>
+                </tr>
+                <tr>
+                    <td>&lt;area&gt;</td>
+                    <td>Defines an area inside an image map</td>
+                </tr>
+                <tr>
+                    <td>&lt;artical&gt;</td>
+                    <td>Defines an articals</td>
+                </tr>
+                <tr>
+                    <td>&lt;a&gt;</td>
+                    <td>Defines a link</td>
+                </tr>
+                <tr>
+                    <td>&lt;area&gt;</td>
+                    <td>Defines an area inside an image map</td>
+                </tr>
+                <tr>
+                    <td>&lt;article&gt;</td>
+                    <td>Defines an article</td>
+                </tr>
+                <tr>
+                    <td>&lt;aside&gt;</td>
+                    <td>Defines content aside from the page content</td>
+                </tr>
+                <tr>
+                    <td>&lt;audio&gt;</td>
+                    <td>Defines embedded sound content</td>
+                </tr>
+                <tr>
+                    <td>&lt;b&gt;</td>
+                    <td>Defines bold text</td>
+                </tr>
+                <tr>
+                    <td>&lt;base&gt;</td>
+                    <td>Specifies the base URL/target for all relative URLs in document</td>
+                </tr>
+                <tr>
+                    <td>&lt;bdi&gt;</td>
+                    <td>Isolates a part of text that might be formatted in a different direction from other text outside it
+                    </td>
+                </tr>
+                <tr>
+                    <td>&lt;bdo&gt;</td>
+                    <td>Overrides the current text direction</td>
+                </tr>
+                <tr>
+                    <td>&lt;blockquote&gt;</td>
+                    <td>Defines a section that is quoted from another source</td>
+                </tr>
+                <tr>
+                    <td>&lt;body&gt;</td>
+                    <td>Defines the document's body</td>
+                </tr>
+                <tr>
+                    <td>&lt;br&gt;</td>
+                    <td>Defines a single line break</td>
+                </tr>
+                <tr>
+                    <td>&lt;button&gt;</td>
+                    <td>Defines a clickable button</td>
+                </tr>
+                <tr>
+                    <td>&lt;canvas&gt;</td>
+                    <td>Used to draw graphics, on the fly, via scripting(Usually JavaScript)</td>
+                </tr>
+                <tr>
+                    <td>&lt;caption&gt;</td>
+                    <td>Defines a table caption</td>
+                </tr>
+                <tr>
+                    <td>&lt;city&gt;</td>
+                    <td>Defines the title of a work</td>
+                </tr>
+                <tr>
+                    <td>&lt;code&gt;</td>
+                    <td>Defines a piece of computer code</td>
+                </tr>
+                <tr>
+                    <td>&lt;col&gt;</td>
+                    <td>Specifies column properties for each column within a &lt;colgroup&gt; element</td>
+                </tr>
+                <tr>
+                    <td>&lt;colgroup&gt;</td>
+                    <td>Specifies a froup of one or more columns in a table for formatting</td>
+                </tr>
+                <tr>
+                    <td>&lt;data&gt;</td>
+                    <td>Adds a machine-readable translation of a given content</td>
+                </tr>
+                <tr>
+                    <td>&lt;datalist&gt;</td>
+                    <td>Specifies a list of pre-defined options for input controls</td>
+                </tr>
+                <tr>
+                    <td>&lt;dd&gt;</td>
+                    <td>Defines a desciption/value of a term in a description list</td>
+                </tr>
+                <tr>
+                    <td>&lt;del&gt;</td>
+                    <td>Defines text that has been deleted from a document</td>
+                </tr>
+                <tr>
+                    <td>&lt;details&gt;</td>
+                    <td>Defines additional details that the user can view or hide</td>
+                </tr>
+                <tr>
+                    <td>&lt;dfn&gt;</td>
+                    <td>Specifies a term that is going to be defined within the content</td>
+                </tr>
+                <tr>
+                    <td>&lt;dialog&gt;</td>
+                    <td>Defines a dialog box or window</td>
+                </tr>
+                <tr>
+                    <td>&lt;div&gt;</td>
+                    <td>Defines a section in a document</td>
+                </tr>
+                <tr>
+                    <td>&lt;dl&gt;</td>
+                    <td>Defines a description list</td>
+                </tr>
+                <tr>
+                    <td>&lt;dt&gt;</td>
+                    <td>Defines a term/name in a description list</td>
+                </tr>
+                <tr>
+                    <td>&lt;em&gt;</td>
+                    <td>Defines emphsized text</td>
+                </tr>
+                <tr>
+                    <td>&lt;embed&gt;</td>
+                    <td>Defines a container for an external application</td>
+                </tr>
+                <tr>
+                    <td>&lt;fieldset&gt;</td>
+                    <td>Group related elements in a form</td>
+                </tr>
+                <tr>
+                    <td>&lt;figcaption&gt;</td>
+                    <td>Defines a caption for a
+                        <figure> element
+                    </td>
+                </tr>
+                <tr>
+                    <td>&lt;font&gt;</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>&lt;footer&gt;</td>
+                    <td>Defines a footer for a document or section</td>
+                </tr>
+                <tr>
+                    <td>&lt;form&gt;</td>
+                    <td>Defines an HTML form for user input</td>
+                </tr>
+                <tr>
+                    <td>&lt;h1&gt; to &lt;h6&gt;</td>
+                    <td>Defines HTML headings</td>
+                </tr>
+                <tr>
+                    <td>&lt;head&gt;</td>
+                    <td>Contains metadata/information for the document</td>
+                </tr>
+                <tr>
+                    <td>&lt;header&gt;</td>
+                    <td>Defines a header for a document or section</td>
+                </tr>
+                <tr>
+                    <td>&lt;hr&gt;</td>
+                    <td>Defines a thematic chage in the content</td>
+                </tr>
+                <tr>
+                    <td>&lt;html&gt;</td>
+                    <td>Defines the root of an HTML document</td>
+                </tr>
+                <tr>
+                    <td>&lt;i&gt;</td>
+                    <td>Defines a part of text in an alternate voice or mood</td>
+                </tr>
+                <tr>
+                    <td>&lt;iframe&gt;</td>
+                    <td>Defines an inline frame</td>
+                </tr>
+                <tr>
+                    <td>&lt;img&gt;</td>
+                    <td>Defines an image</td>
+                </tr>
+                <tr>
+                    <td>&lt;input&gt;</td>
+                    <td>Defines an input control</td>
+                </tr>
+                <tr>
+                    <td>&lt;ins&gt;</td>
+                    <td>Defines a text that has been inserted into a document</td>
+                </tr>
+                <tr>
+                    <td>&lt;kbd&gt;</td>
+                    <td>Defines keyboard input</td>
+                </tr>
+                <tr>
+                    <td>&lt;label&gt;</td>
+                    <td>Defines a label for an &lt;input&gt; element</td>
+                </tr>
+                <tr>
+                    <td>&lt;legend&gt;</td>
+                    <td>Defines a caption for a &lt;fieldser&gt; element</td>
+                </tr>
+                <tr>
+                    <td>&lt;li&gt;</td>
+                    <td>Defines a list item</td>
+                </tr>
+                <tr>
+                    <td>&lt;link&gt;</td>
+                    <td>Defines the relationship between a document and an external resource (Most used to link to style sheets)
+                    </td>
+                </tr>
+                <tr>
+                    <td>&lt;main&gt;</td>
+                    <td>Specifies the main content of a document</td>
+                </tr>
+                <tr>
+                    <td>&lt;map&gt;</td>
+                    <td>Defines an image map</td>
+                </tr>
+                <tr>
+                    <td>&lt;mark&gt;</td>
+                    <td>Defines marked/highlighted text</td>
+                </tr>
+                <tr>
+                    <td>&lt;meta&gt;</td>
+                    <td>Defines metadata ablut an HTML document</td>
+                </tr>
+                <tr>
+                    <td>&lt;meter&gt;</td>
+                    <td>Defines a scalar measurement within a known range(a gauge)</td>
+                </tr>
+                <tr>
+                    <td>&lt;nav&gt;</td>
+                    <td>Defines navigation links</td>
+                </tr>
+                <tr>
+                    <td>&lt;noscript&gt;</td>
+                    <td>Defines an alternate content for users that do not support client-side scripts</td>
+                </tr>
+                <tr>
+                    <td>&lt;object&gt;</td>
+                    <td>Defines a container for an external application</td>
+                </tr>
+                <tr>
+                    <td>&lt;ol&gt;</td>
+                    <td>Defines an order list</td>
+                </tr>
+                <tr>
+                    <td>&lt;optgroup&gt;</td>
+                    <td>Defines a group of related options in drop-down list</td>
+                </tr>
+                <tr>
+                    <td>&lt;option&gt;</td>
+                    <td>Defines an option in a drop-down list</td>
+                </tr>
+                <tr>
+                    <td>&lt;output&gt;</td>
+                    <td>Defines the result of a calculation</td>
+                </tr>
+                <tr>
+                    <td>&lt;p&gt;</td>
+                    <td>Defines a paragraph</td>
+                </tr>
+                <tr>
+                    <td>&lt;param&gt;</td>
+                    <td>Defines a parameter for an object</td>
+                </tr>
+                <tr>
+                    <td>&lt;picture&gt;</td>
+                    <td>Defines a container for multiple image resources</td>
+                </tr>
+                <tr>
+                    <td>&lt;pre&gt;</td>
+                    <td>Defines preformatted text</td>
+                </tr>
+                <tr>
+                    <td>&lt;progress&gt;</td>
+                    <td>Represents the progress of a task</td>
+                </tr>
+                <tr>
+                    <td>&lt;q&gt;</td>
+                    <td>Defines a short quotation</td>
+                </tr>
+                <tr>
+                    <td>&lt;rp&gt;</td>
+                    <td>Defines what to show in browser that do not support ruby annotation</td>
+                </tr>
+                <tr>
+                    <td>&lt;rt&gt;</td>
+                    <td>Defines an explanation/pronunciation of characters (For east Asian typography)</td>
+                </tr>
+                <tr>
+                    <td>&lt;ruby&gt;</td>
+                    <td>Defines a ruby annotation(for East Asian typography)</td>
+                </tr>
+                <tr>
+                    <td>&lt;s&gt;</td>
+                    <td>Defines text that is no longer correcr</td>
+                </tr>
+                <tr>
+                    <td>&lt;samp&gt;</td>
+                    <td>Defines sample output from a computer program</td>
+                </tr>
+                <tr>
+                    <td>&lt;script&gt;</td>
+                    <td>Defines a client-side script</td>
+                </tr>
+                <tr>
+                    <td>&lt;section&gt;</td>
+                    <td>Defines a section in a document</td>
+                </tr>
+                <tr>
+                    <td>&lt;select&gt;</td>
+                    <td>Defines a drop-down list</td>
+                </tr>
+                <tr>
+                    <td>&lt;small&gt;</td>
+                    <td>Defines smaller text</td>
+                </tr>
+                <tr>
+                    <td>&lt;source&gt;</td>
+                    <td>Defines multiple media resources for media elements(&lt;video&gt; and &lt;audio&gt;)</td>
+                </tr>
+                <tr>
+                    <td>&lt;span&gt;</td>
+                    <td>Defines a section in a document</td>
+                </tr>
+                <tr>
+                    <td>&lt;strong&gt;</td>
+                    <td>Defines important text</td>
+                </tr>
+                <tr>
+                    <td>&lt;style&gt;</td>
+                    <td>Defines style information for a document</td>
+                </tr>
+                <tr>
+                    <td>&lt;sub&gt;</td>
+                    <td>Defines subscripted text</td>
+                </tr>
+                <tr>
+                    <td>&lt;summary&gt;</td>
+                    <td>Defines a visible heading for a &lt;details&gt; element</td>
+                </tr>
+                <tr>
+                    <td>&lt;sup&gt;</td>
+                    <td>Defines superscripted text</td>
+                </tr>
+                <tr>
+                    <td>&lt;svg&gt;</td>
+                    <td>Defines a container for SVG graphics</td>
+                </tr>
+                <tr>
+                    <td>&lt;table&gt;</td>
+                    <td>Defines a table</td>
+                </tr>
+                <tr>
+                    <td>&lt;tbody&gt;</td>
+                    <td>Groups the body content in a table</td>
+                </tr>
+                <tr>
+                    <td>&lt;td&gt;</td>
+                    <td>Defines a cell in a table</td>
+                </tr>
+                <tr>
+                    <td>&lt;template&gt;</td>
+                    <td>Defines a container for content that should be hidden when the page load</td>
+                </tr>
+                <tr>
+                    <td>&lt;textarea&gt;</td>
+                    <td>Defines a multiline input control (text area)</td>
+                </tr>
+                <tr>
+                    <td>&lt;tfoot&gt;</td>
+                    <td>Group the footer content in a table</td>
+                </tr>
+                <tr>
+                    <td>&lt;th&gt;</td>
+                    <td>Defines a header cell in a table</td>
+                </tr>
+                <tr>
+                    <td>&lt;thead&gt;</td>
+                    <td>Group the header content in a table</td>
+                </tr>
+                <tr>
+                    <td>&lt;time&gt;</td>
+                    <td>Defines a specific time (or datetime)</td>
+                </tr>
+                <tr>
+                    <td>&lt;title&gt;</td>
+                    <td>Defines a title for the document</td>
+                </tr>
+                <tr>
+                    <td>&lt;tr&gt;</td>
+                    <td>Defines a row in a table</td>
+                </tr>
+                <tr>
+                    <td>&lt;track&gt;</td>
+                    <td>Defines texrt track for media elements(&lt;video&gt; and &lt;audio&gt;)</td>
+                </tr>
+                <tr>
+                    <td>&lt;u&gt;</td>
+                    <td>Defines some text that is unarticulated and styled different from normal text</td>
+                </tr>
+                <tr>
+                    <td>&lt;ul&gt;</td>
+                    <td>Defines an unordered list</td>
+                </tr>
+                <tr>
+                    <td>&lt;var&gt;</td>
+                    <td>Defines a variable</td>
+                </tr>
+                <tr>
+                    <td>&lt;video&gt;</td>
+                    <td>Defines embedded video content</td>
+                </tr>
+                <tr>
+                    <td>&lt;wbr&gt;</td>
+                    <td>Defines a possible line-break</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="ref" id="css-ref">
+        <table id="css-table" cellspacing="0">
+            <thead>
+                <tr>
+                    <td> Property</td>
+                    <td>Description</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>align-content</td>
+                    <td><b>Uses:</b> Specifies the alignment between the inside a flexible container whe items do not use all available space <br><b>Values:
+                        </b>center || flex-end || flex-start || space-between || space-around || stretch || initial || inherit || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>align-items</td>
+                    <td><b>Uses: </b> Specifies the alignment for items inside a flexible container
+                        <br><b>Values: </b>baseline || center || flex-end || flex-start || stretch || initial || inherit || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>align-self</td>
+                    <td>
+                        <b>Uses:</b> Specifies the alignment for selected items inside a flexible container<br>
+                        <b>Values:</b>auto || baseline || center || flex-end || flex-start || stretch || initial || inherit || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>all</td>
+                    <td>
+                        <b>Uses: </b> Reset all property (except unicode-bidi and direction) <br>
+                        <b>Values: </b>inherit || initial || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>animation</td>
+                    <td>
+                        <b>Uses: </b> A shorthand property for all the animatation-* properties <br>
+                        <b>Values: </b> [animation-name] [duration] [timing-function] [delay] [iteration-count] [direction] [fill-mode]
+                    </td>
+                </tr>
+                <tr>
+                    <td>animation-delay</td>
+                    <td>
+                        <b>Uses: </b> Specifies a delay for the start of an animation <br>
+                        <b>Values: </b>time || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>animation-direction</td>
+                    <td><b>Uses:</b> Specifies whether an animation should be played forwards, backwards or in alternate cycles <br>
+                        <b>Values: </b>normal || reverse || alternate || alternate-reverse || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>animation-duration</td>
+                    <td><b>Uses: </b> Specifies how long an animation should take to complete on cycle <br>
+                        <b>Values: </b>time || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>animation-fill-mode</td>
+                    <td>
+                        <b>Uses: </b> Specifies a style for the element when the animation is not playing (Before it starts, after it ends or both <br>
+                        <b>Values: </b>none || forwards || backwards || both || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>animation-iteration-count</td>
+                    <td><b>Uses: </b> Specifies the number of times an animation should be played <br>
+                        <b>Values: </b>number || infinite || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>animation-name</td>
+                    <td><b>Uses: </b> Specifies a name for the @keyframes animation <br>
+                        <b>Values: </b>keyframename || none || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>animation-play- state</td>
+                    <td><b>Uses: </b>Specifies whether the animation is running or paused <br>
+                        <b>Values: </b>paused || running || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>animation-timing-function</td>
+                    <td><b>Uses: </b> Specifies the speed curve of an animation <br>
+                        <b>Values:
+                        </b>linear || ease || ease-in || ease-out || ease-in-out || step-start || step-end || steps(int,start || end) || cubic-bezier(n,n,n,n) || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>backface-visibility</td>
+                    <td><b>Uses: </b> Defines whether or not the back face of an element should be visible when facing the user <br>
+                        <b>Values: </b>visible || hidden || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>background</td>
+                    <td><b>Uses: </b> A shorthand property for all the background-* properties <br>
+                        <b>Values: </b>[bg-color] [bg-image] [position/bg-size] [bg-repeat] [bg-origin] [bg-clip] [bg-attachment] [initial || inherit]
+                    </td>
+                </tr>
+                <tr>
+                    <td>background-attachment</td>
+                    <td><b>Uses: </b> Sets whether a background image scrolls with the rest of the page or is fixed <br>
+                        <b>Values: </b>scroll || fixed || local || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>background-blend-mode</td>
+                    <td><b>Uses: </b> Specifies the blending mode of each background layer(color/image) <br>
+                        <b>Values:
+                        </b>normal || multiply || screen || overlay || darken || lighten || color-dodge || saturation || color || luminosity
+                    </td>
+                </tr>
+                <tr>
+                    <td>background-clip</td>
+                    <td><b>Uses: </b> Defines how far the background (color or image) should extend within an element
+                        <br>
+                        <b>Values: </b>border-box || padding-box || content-box || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>background-color</td>
+                    <td><b>Uses: </b>Specifies the background color of an element <br>
+                        <b>Values: </b>color || transparent || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>background-image</td>
+                    <td><b>Uses: </b>Specifies one or more background images for an element <br>
+                        <b>Values: </b>url('') || none || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>background-origin</td>
+                    <td><b>Uses:</b> Specifies the origin position of a background image <br>
+                        <b>Values: </b>padding-box || border-box || content-box || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>background-position</td>
+                    <td><b>Uses:</b> Specifies the origin position of a background image <br>
+                        <b>Values:</b>[left top] || [left center] || [left bottom] || [right top] || [right center] || [right bottom] || [center top] || [center center] || [center bottom] || [x% y%] || [xpos ypos] || [initial] || [inherit]
+                    </td>
+                </tr>
+                <tr>
+                    <td>background-repeat</td>
+                    <td><b>Uses:</b> Sets if/how a background image will be repeated <br>
+                        <b>Values: </b>repeat || repeat-x || repeat-y || no-repeat || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>background-size</td>
+                    <td><b>Uses:</b> Specifies the size of the background imges <br>
+                        <b>Values: </b>auto || length || percentage || cover || contain || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border</td>
+                    <td><b>Uses:</b> A shorthend property for all border-* property <br>
+                        <b>Values: </b>[border-width] [border-style] [border-color] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-bottom</td>
+                    <td><b>Uses:</b> A shorthand propety for all border-bottom-* property <br>
+                        <b>Values: </b>[border-width] [border-style] [border-color] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-bottom-color</td>
+                    <td><b>Uses:</b> Sets the color of the bottom border <br>
+                        <b>Values: </b>color || transparent || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-bottom-left-radius</td>
+                    <td><b>Uses:</b> Defines the radius of the border of the bottom-left corner <br>
+                        <b>Values: </b>length || % [length || %] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-bottom-right-radius</td>
+                    <td><b>Uses:</b> Defines the radius of the border of the bottom-rigth corner <br>
+                        <b>Values: </b>length || % [length || %] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-bottom-style</td>
+                    <td><b>Uses:</b> Sets the style of the bottom border <br>
+                        <b>Values: </b>none || hidden || dotted || dashed || solid || double || groove || ridge || inset || outset || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-bottom-width</td>
+                    <td><b>Uses:</b> Sets the width of the bottom border <br>
+                        <b>Values:</b>medium || thin || thick || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-collapse</td>
+                    <td><b>Uses:</b> Sets whether table border should collapse into a single border of be separated <br>
+                        <b>Values: </b>separate || collapse || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-color</td>
+                    <td><b>Uses:</b> Sets the color of the four borders <br>
+                        <b>Values: </b> [top-border-color] [right-border-color] [bottom-border-color] [left-border-color] || [top-border-color] [right-left-border-color] [bottom-border-color] || [top-bottom-border-color] [left-right-border-color] || transparent
+                        || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-image</td>
+                    <td><b>Uses:</b> A shorhand property for all the border-image-* properties <br>
+                        <b>Values: </b>[source] [slice] [width] [outset] [repeat] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-image-outset</td>
+                    <td><b>Uses:</b> Specifies the amount by which the border image area extends beyond the border box
+                        <br>
+                        <b>Values: </b>length || number || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-image-repeat</td>
+                    <td><b>Uses:</b> Specifies whether the border image should be repeated, rounded or stretched <br>
+                        <b>Values: </b>stretch || repeat || round || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-image-slice</td>
+                    <td><b>Uses:</b> Specifies how to slice the border image<br>
+                        <b>Values: </b>number || % || fill || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-image-source</td>
+                    <td><b>Uses:</b> Specifies the path to the image to be used as a border <br>
+                        <b>Values: </b>none || image || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-image-width</td>
+                    <td><b>Uses:</b> Specifies the width of the border image <br>
+                        <b>Values: </b>number || % || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-left</td>
+                    <td><b>Uses:</b> A shorthand property for all the border-left-* properties <br>
+                        <b>Values: </b>[border-width] [border-style] [border-color] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-left-color</td>
+                    <td><b>Uses: </b>Sets the color of the left border <br>
+                        <b>Values: </b> color || transparent || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>bordr-left-style</td>
+                    <td><b>Uses:</b> Sets the style of the left border <br>
+                        <b>Values: </b>none || hidden || dotted || dashed || solid || double || groove || ridge || inset || outset || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-left-width</td>
+                    <td><b>Uses:</b> Sets the width of the left border <br>
+                        <b>Values: </b>medium || thin || thick || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-radius</td>
+                    <td><b>Uses:</b> A shorthand property for all the border-*-radius preperty <br>
+                        <b>Values: </b>[top-left-corner] [top-right-corner] [bottom-right-corner] [bottom-left-corner] || [top-left-corner] [top-right-corner - bottom-left-corner] [bottom-right-corner] || [top-left-corner - bottom-right-corner] [top-right-corner
+                        - bottom-left-corner] || length || % || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-right</td>
+                    <td><b>Uses:</b> A shorthand property for all border-right-* property <br>
+                        <b>Values: </b>[border-width] [border-style] [border-color] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-right-color</td>
+                    <td><b>Uses:</b> Sets the color o the right border <br>
+                        <b>Values: </b>color || transparent || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>bordr-right-style</td>
+                    <td><b>Uses:</b> Sets the style of the right border <br>
+                        <b>Values: </b>none || hidden || dotted || dashed || solid || double || groove || ridge || inset || outset || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-right-width</td>
+                    <td><b>Uses:</b> Sets the width of the right border <br>
+                        <b>Values: </b>medium || thin || thick || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-spacing</td>
+                    <td><b>Uses:</b> Sets the distance between the borders of adjectnt cells <br>
+                        <b>Values: </b>length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-style</td>
+                    <td><b>Uses:</b> Sets the style of the four borders <br>
+                        <b>Values: </b>none || hidden || dotted || dashed || solid || double || groove || ridge || inset || outset || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-top</td>
+                    <td><b>Uses:</b> A shourthand property for all border-top* property <br>
+                        <b>Values: </b>[border-width] [border-style] [border-color] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-top-color</td>
+                    <td><b>Uses:</b> Sets the color of the top border <br>
+                        <b>Values: </b>color || transparent || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-top-left-radius</td>
+                    <td><b>Uses:</b> Defines the radius of the border of the top-left corner<br>
+                        <b>Values: </b>length || % [length || %] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-top-right-radius</td>
+                    <td> <b>Uses:</b> Defines the radius of the border of the top-right corner<br>
+                        <b>Values: </b>length || % [length || %] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-top-style</td>
+                    <td><b>Uses:</b> Sets the style of the top border<br>
+                        <b>Values: </b>none || hidden || dotted || dashed || solid || double || groove || ridge || inset || outset || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-top-width</td>
+                    <td><b>Uses:</b> Sets the width of the four borders<br>
+                        <b>Values: </b>medium || thin || thick || length || initial || inherit
+                    </td>
+                </tr>
+                <td>border-width</td>
+                <td><b>Uses:</b> Sets the width of the four borders<br>
+                    <b>Values: </b>medium || thin || thick || length || initial || inherit
+                </td>
+                </tr>
+                <tr>
+                    <td>bottom</td>
+                    <td><b>Uses:</b> Sets the elements position, from the bottom of its parent element <br>
+                        <b>Values: </b>inherit || initial || auto || length
+                    </td>
+                </tr>
+                <tr>
+                    <td>box-decoration-break</td>
+                    <td><b>Uses:</b> Sets the behavior of the background and border of an element at page-break,or for in-line elements, at line-break <br>
+                        <b>Values: </b>inherit || initial || clone || unset || slice
+                    </td>
+                </tr>
+                <tr>
+                    <td>box-shadow</td>
+                    <td><b>Uses:</b> Attaches one or more shadows to an element <br>
+                        <b>Values: </b>none || [h-offset] [v-offset] [blur] [spread] [color] || inset || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>box-sizing</td>
+                    <td><b>Uses: </b> Defines how the width and height of an element are calculated: should they include padding and borders or not margin <br>
+                        <b>Values: </b>content-box || border-box || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>break-after</td>
+                    <td><b>Uses:</b> Specifies whether or not a pag-column or region-break should occur after the specified element <br>
+                        <b>Values: </b> auto || all || always || avoid || avoid-column || avoid-page || avoid-region || column || left || page || recto || region || right || verso || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>break-before</td>
+                    <td><b>Uses:</b> Specifies whether or not a page-, column- or region-break should occur after the specified element <br>
+                        <b>Values: </b> auto || all || always || avoid || avoid-column || avoid-page || avoid-region || column || left || page || recto || region || right || verso || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>border-inside</td>
+                    <td><b>Uses:</b> Specifies whether or not a page- , column- or region-break should occur inside the specified element <br>
+                        <b>Values: </b> auto || all || always || avoid || avoid-column || avoid-page || avoid-region || column || left || page || recto || region || right || verso || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>caption-side</td>
+                    <td><b>Uses:</b> Specifies the placement of a table caption <br>
+                        <b>Values: </b>top || bottom || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>caret-color</td>
+                    <td><b>Uses:</b> Specifies te color of the cursor(caret) in inputs, textareas or any element that is editable <br>
+                        <b>Values: </b>auto || color || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>@charset</td>
+                    <td><b>Uses:</b> Specifies the character encoding used in the style sheet <br>
+                        <b>Syntax: </b>@charset "charset";
+                    </td>
+                </tr>
+                <tr>
+                    <td>clear</td>
+                    <td><b>Uses:</b> Specifies what should happen with the element that is next to a floating element
+                        <br>
+                        <b>Values: </b>none || left || right || both || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>clip</td>
+                    <td><b>Uses:</b> Clips an absolutely positioned element <br>
+                        <b>Values: </b>auto || shape || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>clip-path</td>
+                    <td><b>Uses:</b> Clips an absolutely positioned element <br>
+                        <b>Values:
+                        </b>clip-source || basic-shape || margin-box || border-box || padding-box || content-box || fill-box || stroke-box || view-box || none || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>color</td>
+                    <td><b>Uses:</b> Sets the color of text <br>
+                        <b>Values: </b>color || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>column-count</td>
+                    <td><b>Uses:</b> Specifies the number of column an element should be divided into <br>
+                        <b>Values: </b>number || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>column-fill</td>
+                    <td><b>Uses:</b> Specifies how to fill column,balanced or not <br>
+                        <b>Values: </b>balance || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>column-gap</td>
+                    <td><b>Uses:</b> Specifies the gap between the column <br>
+                        <b>Values: </b>length || normal || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>column-rule</td>
+                    <td><b>Uses:</b> A shorthand property for all the column-rull-* property <br>
+                        <b>Values: </b>[column-rule-width] [column-rule-style] [column-rule-color] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>column-rule-color</td>
+                    <td><b>Uses:</b> Specifies the color of the rule between column <br>
+                        <b>Values: </b>color || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>column-rull-style</td>
+                    <td><b>Uses:</b> Specifies the style of the rule between column <br>
+                        <b>Values: </b>none || hidden || dotted || dashed || solid || double || groove || ridge || inset || outset || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>column-rule-width</td>
+                    <td><b>Uses:</b> Specifies the width of the rule between column <br>
+                        <b>Values: </b>medium || thin || thick || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>column-span</td>
+                    <td><b>Uses:</b> Specifies how many column an element should span across <br>
+                        <b>Values: </b>none || all || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>column-width</td>
+                    <td><b>Uses:</b> Specifies the column width <br>
+                        <b>Values</b>auto || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>columns</td>
+                    <td><b>User:</b> A shorthand property for column-width and column-count <br>
+                        <b>Values: </b>auto || column-width column-count || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>content</td>
+                    <td><b>Uses:</b> Used with the :before and :after pseudo-elements, to insert generated content <br>
+                        <b>Values:
+                        </b>normal || none || counter || attr || string || open-quote || close-quote || no-open-quote || no-close-quote || url || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>counter-increment</td>
+                    <td><b>Uses:</b> Increases or decreases the value of one or more CSS counters <br>
+                        <b>Values: </b>none || id || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>counter-reset</td>
+                    <td><b>Uses:</b> Creates or resets one or more CSS counters <br>
+                        <b>Values: </b>none || [name] [number] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>cursor</td>
+                    <td><b>Uses:</b> Specifies the mouse cursor to be displayed when pinting over an element <br>
+                        <b>Values:
+                        </b>alias || all-scroll || auto || cell || context-menu || col-resize || copy || crosshair || default || e-resize || ew-resize || grab || grabbing || help || move || n-resize || ne-resize || nesw-resize
+                        || ns-resize || nw-resize || nwse-resize || no-drop || none || not-allowed || pointer || progress || row-resize || s-resize || se-resize || sw-resize || text || url || w-resize || wait || zoom-in || zoom-out
+                    </td>
+                </tr>
+                <tr>
+                    <td>direction</td>
+                    <td><b>Uses:</b> Specifies the text direction/writing direction <br>
+                        <b>Values: </b>ltr || rtl || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>display</td>
+                    <td><b>Uses:</b> Specifies how a certain HTML element should be displayed <br>
+                        <b>Values:
+                        </b>inline || block || contents || flex || grid || inline-block || inline-flex || inline-grid || inline-table || list-item || run-in || table || table-caption || table-column-group || table-header-group
+                        || table-footer-group || table-row-group || table-cell || table-column || table-row || none || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>empty-cells</td>
+                    <td><b>Uses:</b> Specifies whether or not to display border and background on empty cells in a table
+                        <br>
+                        <b>Values: </b>show || hide || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>filter</td>
+                    <td><b>Uses: </b> Defines effects on an element before the element is displayed <br>
+                        <b>Values: </b>none || blur(px) || brightness(%) || contrast(%) || drop-shadow([h-shadow] [v-shadow] [blur] [spread] [color]) || grayscale(%) || hue-rotate(deg) || invert(%) || opacity(%) || saturate(%) || sepia(%) || url() ||
+                        initial || inherit/td>
+                </tr>
+                <tr>
+                    <td>flex</td>
+                    <td><b>Uses:</b> A shorthand property for the flex-grow flex-shrink and the flex-basis properties
+                        <br>
+                        <b>Values: </b>[flex-grow] [flex-shrink] [flex-basis] || auto || none || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>flex-basis</td>
+                    <td><b>Uses:</b> Specifies the initial length of a flexible item <br>
+                        <b>Values: </b>number || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>flex-direction</td>
+                    <td><b>Uses:</b> Specifies the direction of the flexible items <br>
+                        <b>Values:</b>row || row-reverse || column || column-reverse || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>flex-flow</td>
+                    <td><b>Uses:</b> A shorthand propety for the flex-direction and the flex-wrap properties <br>
+                        <b>Values: </b>[flex-direction] [flex-wrap] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>flex-grow</td>
+                    <td><b>Uses:</b> Specifies how much the item will grow relative to the rest <br>
+                        <b>Values: </b>number || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>flex-shrink</td>
+                    <td><b>Uses:</b> Specifies how the item will shrink relative to the rest <br>
+                        <b>Values: </b>number || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>flex-wrap</td>
+                    <td><b>Uses:</b> Specifies whether the flexible items should wrap or not <br>
+                        <b>Values: </b>nowrap || wrap || wrap-reverse || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td><b>Uses:</b> Specifies whethe an element should float to the left, right or not at all <br>
+                        <b>Values: </b>none || left || right || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>font</td>
+                    <td><b>Uses:</b> A shorthand property for the font-style, font-variant, font-weight, font-size/line-height and the font-family properties <br>
+                        <b>Values: </b>[font-style] [font-variant] [font-weight] [font-size/line-height] [ font-family] || caption || icon || menu || message-box || small-caption || status-bar || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>@font-face</td>
+                    <td><b>Uses:</b> A rule that allows websites to download and use fonts other than the "web-safe" fonts <br>
+                        <b>Syntax: </b> @font-face{[font-family: ""] [src:""] [font-stretch:""] [font-style:""] [font-weight:""] [unicode-range:""]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-family</td>
+                    <td><b>Uses:</b> Specifies the font family for text <br>
+                        <b>Values: </b>family-name || generic-family || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-feature-settings</td>
+                    <td><b>Uses:</b> Allows control over advaced typogryphic features in OneType fonts <br>
+                        <b>Values: </b>normal || feature-value
+                    </td>
+                </tr>
+                <tr>
+                    <td>@font-feature-value</td>
+                    <td><b>Uses:</b> Allow author to use a common name in font-variant-alternate for feature activated differently in OneType<br>
+                        <b>Syntax: </b>@font-feature-values [family-name]# {[feature-value-block-list] }
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-kerning</td>
+                    <td><b>Uses:</b> Controls the usage of the kerning information <br>
+                        <b>Values: </b>auto || normal || none
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-language-override</td>
+                    <td><b>Uses:</b> Controls the usage of language-specific glyphs in a typeface <br>
+                        <b>Values: </b>normal || [string]
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-size</td>
+                    <td><b>Uses:</b> Specifies the fon size of text<br>
+                        <b>Values:</b>medium || xx-small || x-small || small || large || x-large || xx-large || smaller || larger || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-size-adjust</td>
+                    <td><b>Uses:</b> Preserves the readability of text when font fallback occurs <br>
+                        <b>Values: </b>number || none || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-stretch</td>
+                    <td><b>Uses:</b> Select a normal, condensed or expanded face from a font family <br>
+                        <b>Values: </b>ultra-condensed || extra-condensed || condensed || semi-condensed || normal || semi-expanded || expanded || extra-expanded || ultra-expanded || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-style</td>
+                    <td><b>Uses:</b> Specifies the font style for text <br>
+                        <b>Values: </b>normal || italic || oblique || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-synthesis</td>
+                    <td><b>Uses: </b> Controls which missing typefaces may be synthesized by the browser<br>
+                        <b>Values: </b> none || style || inherit || initial || weight || unset/td>
+                </tr>
+                <tr>
+                    <td>font-variant</td>
+                    <td><b>Uses:</b> Specifies whether or not a text should be displayed in a small-caps font<br>
+                        <b>Values: </b>normal || small-caps || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-variant-alternates</td>
+                    <td><b>Uses:</b> Controls the usage of alternate glyphs associated to alternative names defined in @font-feature-values <br>
+                        <b>Values</b>annotation() || character-variant() || historical-forms || normal || ornaments() || styleset() || stylistic() || swash() || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-variant-caps</td>
+                    <td><b>Uses:</b> Controls the usage of alternate glyphs for capital letters<br>
+                        <b>Values</b>normal || small-caps || all-small-caps || petite-caps || all-petite-caps || unicase || titling-caps || initial || inherit || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-variant-east-asian</td>
+                    <td><b>Uses: </b> Controls the usage of alternate glyphs for East Asian scripts <br>
+                        <b>Values: </b>normal || ruby || jis78 || jis83 || jis90 || jis04 || simplified || traditional || full-width || proportional-width || ruby || full-width jis83 || inherit || initial || revert || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-variant-ligatures</td>
+                    <td><b>Uses: </b>Controls which ligatures and contextual forms are used in textual content of the elements it applies to <br>
+                        <b>Values: </b>normal || none || common-ligatures || no-common-ligatures || discretionary-ligatures || no-discretionary-ligatures || historical-ligatures || no-historical-ligatures || contextual || no-contextual || inherit || initial
+                        || revert || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-variant-numeric</td>
+                    <td><b>Uses: </b>Controls the usage of alternate glyphs for numbers, fraction and ordinal markers
+                        <br>
+                        <b>Values: </b>normal || ordinal || slashed-zero || lining-nums || oldstyle-nums || proportional-nums || tabular-nums || diagonal-fractions || stacked-fractions || oldstyle-nums stacked-fractions || inherit || initial || revert
+                        || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-variant-position</td>
+                    <td><b>Uses: </b>Controls the usage of alternate glyphs of smaller size positioned as superscript or subscript regarding the baseline of the font <br>
+                        <b>Values: </b>normal || sub || super || inherit || initial || revert || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>font-weight</td>
+                    <td><b>Uses: </b>Specifies the weight of a font <br>
+                        <b>Values: </b>normal || bold || bolder || lighter || number || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>gap</td>
+                    <td><b>Uses:</b> A shorthand property for the row-gap and the column-gap properties <br>
+                        <b>Values: </b>[row-gap] [column-gap]
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid</td>
+                    <td><b>Uses:</b> A shorthand property for the grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto,columns and the grid-auto-flow property <br>
+                        <b>Values: </b>none || [grid-template-rows] / [grid-template-columns] || [grid-template-areas] || [grid-template-rows] / [grid-auto-flow] [grid-auto-columns] || [grid-auto-flow] [grid-auto-rows] / [grid-template-columns] || initial
+                        || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-area</td>
+                    <td><b>Uses:</b> Either specifies a name for the grid item or this property is a shorthand property for the grid-row-start, grid-column-start, grid-row-end and grid-column-end properties <br>
+                        <b>Values: </b>[grid-row-start] / [grid-column-start] / [grid-row-end] / [grid-column-end] || itemname
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-auto-columns</td>
+                    <td><b>Uses:</b> Specifies a default column size <br>
+                        <b>Values: </b>auto || max-content || min-content || length
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-auto-flow</td>
+                    <td><b>Uses:</b> Specifies how auto-placed items are inserted in the grid <br>
+                        <b>Values: </b>row || column || dense || [row] [dense] || [column] [dense]
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-auto-rows</td>
+                    <td><b>Uses:</b> Specifies a default row size <br>
+                        <b>Values: </b>auto || max-content || min-content || length
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-column</td>
+                    <td><b>Uses:</b> A shorthand property for the grid-column-start and grid-column-end properties <br>
+                        <b>Values: </b>grid-column-start / grid-column-end
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-column-end</td>
+                    <td><b>Uses:</b> Specifies where to end the grid item <br>
+                        <b>Values: </b>auto || span n || column-line
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-column-gap</td>
+                    <td><b>Uses:</b> Specifies the size of the gap between columns <br>
+                        <b>Values: </b>length
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-column-start</td>
+                    <td><b>Uses:</b> Specifies where to start the grid item <br>
+                        <b>Values: </b>auto || span n || column-line
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-gap</td>
+                    <td><b>Uses:</b> A shorthand property for the grid-row-gap and grid-column-gap propertiess <br>
+                        <b>Values: </b>[grid-row-gap] [grid-column-gap]
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-row</td>
+                    <td><b>Uses: </b> A shorthand property for the grid-row-start and grid-row-end properties <br>
+                        <b>Values: </b>grid-row-start / grid-row-end
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-row-end</td>
+                    <td><b>Uses: </b> Specifies where to end the grid item <br>
+                        <b>Values: </b>auto || row-line || span n
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-row-gap</td>
+                    <td><b>Uses: </b>Specifies the size of the gap between rows<br>
+                        <b>Values: </b>length
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-row-start</td>
+                    <td><b>Uses: </b>Specifies where to start the grid item<br>
+                        <b>Values: </b>auto || row-line
+                    </td>
+                </tr>
+                <tr>
+                    <td>gridd-template</td>
+                    <td><b>Uses: </b>A shorthand property for the grid-template-rows, grid-template-columns and grid-areas properties<br>
+                        <b>Values: </b>none || grid-template-rows / grid-template-columns || grid-template-areas || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>gris-template-areas</td>
+                    <td><b>Uses: </b>Specifies how to display columns and rows, using named grid items<br>
+                        <b>Values: </b>none || itemnames
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-template-columns</td>
+                    <td><b>Uses: </b>Specifies the size of the columns and how many column in a grid layout<br>
+                        <b>Values: </b>none || auto || max-content || min-content || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>grid-template-rows</td>
+                    <td><b>Uses: </b>Specifies the size of the rows in a grid layout<br>
+                        <b>Values: </b>none || auto || max-content || min-content || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>hanging-punctuation</td>
+                    <td><b>Uses: </b>Specifies whether a punctuation character may be placed outside the line box<br>
+                        <b>Values: </b>none || first || last || allow-end || force-end || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>height</td>
+                    <td><b>Uses: </b>Sets the height of an element<br>
+                        <b>Values: </b>auto || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>hyphens</td>
+                    <td><b>Uses: </b>Sets how to split word to improve the layout of paragraphs<br>
+                        <b>Values: </b>none || manual || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>image-rendering</td>
+                    <td><b>Uses: </b>Gives a hint to the browser about what aspects or an image are most important to preserve when the image is scaled</td>
+                </tr>
+                <tr>
+                    <td>@import</td>
+                    <td><b>Uses: </b>Allow you to import a style sheet into another style sheet<br>
+                        <b>Syntax: </b>@import url || string list-of-mediaqueries
+                    </td>
+                </tr>
+                <tr>
+                    <td>isolation</td>
+                    <td><b>Uses: </b>Defines whether an element must create a new stacking content<br>
+                        <b>Values: </b>auto || isolate || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>justify-content</td>
+                    <td><b>Uses: </b>Specifies the alignment between the items inside a flexible container when the items do not use all available space<br>
+                        <b>Values:
+                        </b>flex-start || flex-end || center || space-between || space-around || space-evenly || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>@keyframes</td>
+                    <td><b>Uses: </b>Specifies the animation code<br>
+                        <b>Syntax: </b>@keyframes animationname {keyframes-selector {css-styles;}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>left</td>
+                    <td><b>Uses: </b>Specifies the left position of a positioned element<br>
+                        <b>Values: </b>auto || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>letter-spacing</td>
+                    <td><b>Uses: </b>Increases or decreases the space between characters in a text<br>
+                        <b>Values: </b>normal || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>line-break</td>
+                    <td><b>Uses: </b>Specifies how/if to break lines<br>
+                        <b>Values: </b>auto || loose || normal || strict || inherit || initial || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>line-height</td>
+                    <td><b>Uses: </b>Sets the line height<br>
+                        <b>Values: </b>normal || number || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>list-style</td>
+                    <td><b>Uses: </b>Sets all the properties for a list in one declaration<br>
+                        <b>Values: </b>[list-style-type] [list-style-position] [list-style-image] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>list-style-image</td>
+                    <td><b>Uses: </b>Specifies an image as the list-item marker<br>
+                        <b>Values: </b>none || url || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>list-style-position</td>
+                    <td><b>Uses: </b>Specifies the position of the list-item markers<br>
+                        <b>Values: </b>inside || outside || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>list-style-type</td>
+                    <td><b>Uses: </b>Specifies the type of list-items marker<br>
+                        <b>Values:</b>armenian || cjk-ideographic || decimal || decimal-leading-zero || georgian || hebrew || hiragana || hiragana-iroha || katakana || katakana-iroha || lower-alpha || lower-greek || lower-latin || lower-roman || none
+                        || upper-alpha || upper-greek || upper-latin || upper-roman || initial
+                    </td>
+                </tr>
+                <tr>
+                    <td>margin</td>
+                    <td><b>Uses: </b>Sets all the magin properties in one declaration<br>
+                        <b>Values:</b>[margin-top] [margin-right] [margin-bottom] [margin-left] || [margin-top] [margin-right-left] [margin-bottom] || [margin-top-bottom] [margin-right-left] || length || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>margin-bottom</td>
+                    <td><b>Uses: </b>Sets the bottom margin of an element<br>
+                        <b>Values:</b>length || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>margin-left</td>
+                    <td><b>Uses: </b>Sets the left margin of an element<br>
+                        <b>Values:</b>length || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>margin-right</td>
+                    <td><b>Uses: </b>Sets the right margin of an element<br>
+                        <b>Values:</b>length || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>margin-top</td>
+                    <td><b>Uses: </b>Sets the top margin of an element<br>
+                        <b>Values:</b>length || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>mask</td>
+                    <td><b>Uses: </b>Hides an element by masking or clipping the image at specific places</td>
+                </tr>
+                <tr>
+                    <td>mask-type</td>
+                    <td><b>Uses: </b>Specifies whether a mask element is used as a luminance or an alpha mask</td>
+                </tr>
+                <tr>
+                    <td>max-height</td>
+                    <td><b>Uses: </b>Sets the maximum height of an element<br>
+                        <b>Values:</b>none || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>max-width</td>
+                    <td><b>Uses: </b>Sets the maximum width of an element<br>
+                        <b>Values:</b>none || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>@media</td>
+                    <td><b>Uses: </b>Sets the style rules for different media type/devices/sizes<br>
+                        <b>Syntax:</b>@media not || only mediatype and (mediafeature and || or || not mediafeature) { CSS-Code;}
+                    </td>
+                </tr>
+                <tr>
+                    <td>min-height</td>
+                    <td><b>Uses: </b>Sets the minimum height of an element<br>
+                        <b>Values:</b>length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>min-width</td>
+                    <td><b>Uses: </b>Sets the minimum width of an element<br>
+                        <b>Values:</b>length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>mix-blend-mode</td>
+                    <td><b>Uses: </b>Specifies how an element's content should blend with its direct parent background
+                        <br>
+                        <b>Values:</b>normal || multiply || screen || overlay || darken || lighten || color-dodge || color-burn || difference || exclusion || hue || saturation || color || luminosity
+                    </td>
+                </tr>
+                <tr>
+                    <td>object-fit</td>
+                    <td><b>Uses: </b>Specifies how the content of an replaced element should be fitted to the box established by its used height and width<br>
+                        <b>Values:</b>fill || contain || cover || scale-down || none || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>object-position</td>
+                    <td><b>Uses: </b>Specifies the alignment of the replaced element inside its box<br>
+                        <b>Values:</b>position || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>opacity</td>
+                    <td><b>Uses: </b>Sets the opacity level for an element<br>
+                        <b>Values:</b>number || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>order</td>
+                    <td><b>Uses: </b>Sets the order of the flexible item, relative to the rest<br>
+                        <b>Values:</b>number || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>orphans</td>
+                    <td><b>Uses: </b>Sets the minimum number of lines that must be left at the bottom of a page when a page break occurs inside an element <br>
+                        <b>Values: </b> number || inherit || initial || revert || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>outline</td>
+                    <td><b>Uses: </b>A shorthand property for the outline-width, outline-style and outline-color properties
+                        <br>
+                        <b>Values:</b>[outline-width] [outline-style] [outline-color] || initial || inherit || none
+                    </td>
+                </tr>
+                <tr>
+                    <td>outline-color</td>
+                    <td><b>Uses: </b>Sets the color of an outline<br>
+                        <b>Values:</b>invert || color || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>outline-offset</td>
+                    <td><b>Uses: </b>Offsets an outline, and draws it beyond the border edge<br>
+                        <b>Values:</b>length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>outline-style</td>
+                    <td><b>Uses: </b>Sets the style of an outline<br>
+                        <b>Values:</b>none || hidden || dotted || dashed || solid || double || groove || ridge || inset || outset || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>outline-width</td>
+                    <td><b>Uses: </b>Sets the width of an outlin<br>
+                        <b>Values:</b>medium || thin || thick || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>overflow</td>
+                    <td><b>Uses: </b>Specifies what happens if content overflows an element's box<br>
+                        <b>Values:</b>visible || hidden || scroll || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>overflow-wrap</td>
+                    <td><b>Uses: </b>Specifies whethe or not the browser may break lines within word in order to prevent overflow <br>
+                        <b>Values: </b>normal || break-word || anywhere || inherit || initial || revert || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>overflow-x</td>
+                    <td><b>Uses: </b>Specifies whether or not to clip the left/right edges of the content, if it overflows the element's content<br>
+                        <b>Values:</b>visible || hidden || scroll || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>overflow-y</td>
+                    <td><b>Uses: </b>Specifies whether or not to clip the top/bottom edges of the content, if it overflows the element's content<br>
+                        <b>Values:</b>visible || hidden || scroll || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>padding</td>
+                    <td><b>Uses: </b>A shorthand property for all the padding-* properties<br>
+                        <b>Values:</b>[padding-top] [padding-right] [padding-bottom] [padding-left] || [padding-top] [padding-right-left] [padding-bottom] || [padding-top-bottom] [padding-right-left] || length || auto || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>padding-bottom</td>
+                    <td><b>Uses: </b>Sets the bottom padding of an element <br>
+                        <b>Values:</b>length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>padding-left</td>
+                    <td><b>Uses: </b>Sets the left padding of an element<br>
+                        <b>Values:</b>length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>padding-right</td>
+                    <td><b>Uses: </b>Sets the right padding of an element<br>
+                        <b>Values:</b>length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>padding-top</td>
+                    <td><b>Uses: </b>Sets the top padding of an element<br>
+                        <b>Values:</b>length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>page-break-after</td>
+                    <td><b>Uses: </b>Sets the page-break behavior after an element <br>
+                        <b>Values:</b>auto || always || avoid || left || right || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>page-break-before</td>
+                    <td><b>Uses: </b>Sets the page-break behavior before an element <br>
+                        <b>Values:</b>auto || always || avoid || left || right || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>page-break-inside</td>
+                    <td><b>Uses: </b>Sets the page-break behavior inside an element<br>
+                        <b>Values:</b>auto || avoid || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>perspective</td>
+                    <td><b>Uses: </b>Gives a 3D-positioned element some perspective<br>
+                        <b>Values:</b>length || none || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>perspective-origin</td>
+                    <td><b>Uses: </b>Define at which position the user is looking at the 3D-positioned element<br>
+                        <b>Values:</b>[x-axis] [y-axis] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>pointer-events</td>
+                    <td><b>Uses: </b>Defines whether or not an element reacts to pointer events<br>
+                        <b>Values:</b>auto || none || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>position</td>
+                    <td><b>Uses: </b>Specifies the type of positioning method used for an element<br>
+                        <b>Values:</b>static || absolute || fixed || relative || sticky || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>quotes</td>
+                    <td><b>Uses: </b>Sets the type of quotation marks for embedded quotations<br>
+                        <b>Values:</b>none || symbol || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>resize</td>
+                    <td><b>Uses: </b>Defines if an element is resizable by the user<br>
+                        <b>Values:</b>none || both || horizontal || vertical || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>right</td>
+                    <td><b>Uses: </b>Specifies the right position of a positioned element<br>
+                        <b>Values:</b>auto || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>row-gap</td>
+                    <td><b>Uses: </b>Specifies the gap between the grid rows<br>
+                        <b>Values:</b>length || normal || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>scroll-behavior</td>
+                    <td><b>Uses: </b>Specifies whether to smoothly animated the scroll position in a scrollable box, instead of a straight jump<br>
+                        <b>Values:</b>auto || smooth || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>tab-size</td>
+                    <td><b>Uses: </b>Specifies the width of a tab character<br>
+                        <b>Values:</b>number || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>table-layout</td>
+                    <td><b>Uses: </b>Defines the algorithm used to layout table cells, rows and columns<br>
+                        <b>Values:</b>auto || fixed || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-align</td>
+                    <td><b>Uses: </b>Sepicifies the horizontal alignment of text<br>
+                        <b>Values:</b>left || right || center || justify || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-align-last</td>
+                    <td><b>Uses: </b>Describes how the last line of a block or a line right before a forced line break is aligned when text-align is "justify"<br>
+                        <b>Values:</b>auto || left || right || center || justify || start || end || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-combine-upright</td>
+                    <td><b>Uses: </b>Specifies the combination of multiple characters into the space of a single character
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-decoration</td>
+                    <td><b>Uses: </b>Specifies the decoration added to text<br>
+                        <b>Values:</b>[text-decoration-line] [text-decoration-color] [text-decoration-style] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-decoration-color</td>
+                    <td><b>Uses: </b>Specifies the color of the text-decoration<br>
+                        <b>Values:</b>color || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-decoration-line</td>
+                    <td><b>Uses: </b>Specifies the type of line in a text-decoration<br>
+                        <b>Values:</b>none || underline || overline || line-through || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-decoration-style</td>
+                    <td><b>Uses: </b>Specifies the style of the line in a text decoration<br>
+                        <b>Values:</b>solid || double || dotted || dashed || wavy || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-indent</td>
+                    <td><b>Uses: </b>Specifies the indentation of the first line in a text-block<br>
+                        <b>Values:</b>length || % || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-justify</td>
+                    <td><b>Uses: </b>Specifies the justification method used when text-align is "justify"<br>
+                        <b>Values:</b>auto || inter-word || inter-character || none || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-orientation</td>
+                    <td><b>Uses: </b>Defines the orientation of the text in a line<br>
+                        <b>Values:</b>sideways || sideways-right || upright || || initial || inherit || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-overflow</td>
+                    <td><b>Uses: </b>Specifies what should happen when text overflows the containing element<br>
+                        <b>Values:</b>clip || ellipsis || string || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-shadow</td>
+                    <td><b>Uses: </b>Adds shadow to text<br>
+                        <b>Values:</b>[h-shadow] [v-shadow] [blur-radius] [color] || none || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-transform</td>
+                    <td><b>Uses: </b>Controls the capitalization of text<br>
+                        <b>Values:</b>none || capitalize || uppercase || lowercase || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>text-underline-position</td>
+                    <td><b>Uses: </b>Specifies the position of the underline which is set using the test-decoration property
+                        <br>
+                        <b>Values:</b>above || auto || below || initial || inherit || unset
+                    </td>
+                </tr>
+                <tr>
+                    <td>top</td>
+                    <td><b>Uses: </b>Specifies the top position of a positioned element<br>
+                        <b>Values:</b>auto || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>transform</td>
+                    <td><b>Uses: </b>Applies a 2D or 3D transformation to an element<br>
+                        <b>Values:</b>matrix() || matrix3d() || none || perspective() || rotate() || rotate3d() || rotateX() || rotateY() || rotateZ() || scale() || scale3d() || skewY() || scaleX() || scaleY() || scaleZ() || skew() || skewX() || skewY()
+                        || translate() || translate3D() || translateX() || translateY() || translateZ() || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>transform-origin</td>
+                    <td><b>Uses: </b>Allows you to change the position on transformed element<br>
+                        <b>Values:</b>[x-axis] [y-axis] [z-axis] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>transform-style</td>
+                    <td><b>Uses: </b>Specifies how nested element are rendered in 3D space<br>
+                        <b>Values:</b>flat || preserve-3d || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>transition</td>
+                    <td><b>Uses: </b>A shorthand property for all the transition-* properties<br>
+                        <b>Values:</b>[property] [duration] [timing-function] [delay] || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>transition-delay</td>
+                    <td><b>Uses: </b>Specifies when the transition effect will start<br>
+                        <b>Values:</b>time || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>transition-duration</td>
+                    <td><b>Uses: </b>Specifies how many seconds or milliseconds a transition effect takes to complete
+                        <br>
+                        <b>Values:</b>time || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>transition-property</td>
+                    <td><b>Uses: </b>Specifies the name of the CSS property the transition effect is for<br>
+                        <b>Values:</b>none || all || property || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>transition-timing-function</td>
+                    <td><b>Uses: </b>Specifies the speed curve of the transition effect<br>
+                        <b>Values:</b>linear || ease || ease-in || ease-out || ease-in-out || step-start || step-end || steps(int,start || end) || cubic-bezier(n,n,n,n) || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>unicode-bidi</td>
+                    <td><b>Uses: </b>Used together with the direction property to set or return whether the text should be overridden to support multiple languages in the same document<br>
+                        <b>Values:</b>normal || embed || bidi-override || isolate || isolate-override || plaintext || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>user-select</td>
+                    <td><b>Uses: </b>Specifies whether the text of an element can be selected<br>
+                        <b>Values:</b>auto || none || text || all
+                    </td>
+                </tr>
+                <tr>
+                    <td>vertical-align</td>
+                    <td><b>Uses: </b>Sets the vertical alignment of an element<br>
+                        <b>Values:</b>baseline || length || sub || super || top || text-top || middle || bottom || text-bottom || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>visiblity</td>
+                    <td><b>Uses: </b>Specifies whether or not an element is visible<br>
+                        <b>Values:</b>visible || hidden || collapse || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>white-space</td>
+                    <td><b>Uses: </b>Specifies how white-space inside an element is handled<br>
+                        <b>Values:</b>normal || nowrap || pre || pre-line || pre-wrap || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>windows</td>
+                    <td><b>Uses: </b>Sets the minimum number of lines that must be left at the top of a page when a page break occurs inside an element</td>
+                </tr>
+                <tr>
+                    <td>width</td>
+                    <td><b>Uses: </b>Sets the width of an element<br>
+                        <b>Values:</b>auto || value || % || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>word-break</td>
+                    <td><b>Uses: </b>Specifies how words should break when reaching the end of a line<br>
+                        <b>Values:</b>normal || break-all || keep-all || break-word || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>word-spacing</td>
+                    <td><b>Uses: </b>Increases or decreases the space between words in a text<br>
+                        <b>Values:</b>normal || length || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>word-wrap</td>
+                    <td><b>Uses: </b>Allows long, unbreakable words to be broken and wrap to the next line<br>
+                        <b>Values:</b>normal || break-word || initial || inherit
+                    </td>
+                </tr>
+                <tr>
+                    <td>writing-mode</td>
+                    <td><b>Uses: </b>Specifies whether lines of text are laid out horizontally or vertically<br>
+                        <b>Values:</b>horizontal-tb || vertical-rl || vertical-lr
+                    </td>
+                </tr>
+                <tr>
+                    <td>z-index</td>
+                    <td><b>Uses: </b>Sets the stack order of a positioned element<br>
+                        <b>Values:</b>auto || number || initial || inherit
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        var ref = document.getElementById("css-ref");
+
+        function view(event) {
+            document.getElementById("heading").innerText = event.target.id;
+            if (event.target.id == "html") {
+                ref = document.getElementById("html-ref");
+                ref.style.display = "block";
+
+                var ref1 = document.getElementById("css-ref");
+                ref1.style.display = "none";
+            } else if (event.target.id == "css") {
+                ref = document.getElementById("css-ref");
+                ref.style.display = "block";
+                var ref1 = document.getElementById("html-ref");
+                ref1.style.display = "none";
+            }
+        }
+        var serchBar = document.getElementById("property-name");
+
+        function search() {
+            let filter = serchBar.value.toUpperCase();
+            var table = ref.getElementsByTagName("table");
+            let tr = table[0].getElementsByTagName('tr');
+
+            for (let i = 1; i < tr.length; i++) {
+                let td = tr[i].getElementsByTagName('td')[0].innerText.toUpperCase();
+
+                if (td.search(filter) > -1) {
+                    tr[i].style.display = '';
+                } else {
+                    tr[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
