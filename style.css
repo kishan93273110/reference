@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 40px;
+    background-color: black;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+}
+
+nav span {
+    font-size: 25px;
+    margin-right: 5px;
+    padding: 0px 5px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.ref {
+    width: 100vw;
+    height: max-content;
+}
+
+#heading {
+    width: 100vw;
+    font-size: 40px;
+    overflow-x: hidden;
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: rgb(66, 100, 89);
+}
+
+.inp {
+    width: 90vw;
+    height: 35px;
+    margin: 20px auto;
+    border: 1.5px solid black;
+    padding: 0;
+    display: flex;
+}
+
+.inp image {
+    width: 5%;
+}
+
+.inp input {
+    width: 95%;
+    height: 30px;
+    padding-top: 4px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+table {
+    width: 90vw;
+    margin: auto;
+}
+
+table tr {
+    height: 30px;
+    font-size: 17px;
+}
+
+td {
+    border-bottom: 1px dashed black;
+    padding: 2.5px 0px 2.5px 5px;
+}
+
+td:first-child {
+    width: 13vw;
+    text-align: left;
+}
+
+td:nth-child(2) {
+    width: 75vw;
+}
+
+thead td {
+    border: none;
+}
+
+thead tr {
+    background-color: aqua;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+#html-ref {
+    display: none;
+}
